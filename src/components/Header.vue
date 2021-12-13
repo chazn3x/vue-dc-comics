@@ -90,7 +90,6 @@ export default {
         nav {
             ul {
                 display: flex;
-                list-style: none;
                 li a {
                     padding: 40px 15px;
                     color: $black;
