@@ -1,17 +1,19 @@
 <template>
-  <header class="container">
-        <!-- logo -->
-        <a class="logo" href="#">
-            <img src="../assets/img/dc-logo.png" alt="DC logo header">
-        </a>
-        <!-- menu -->
-        <nav>
-            <ul>
-                <li v-for="(link, index) in links" :key="index">
-                    <a :class="{active: link.current}" :href="link.url">{{link.text}}</a>
-                </li>
-            </ul>
-        </nav>
+  <header>
+        <div class="container">
+            <!-- logo -->
+            <a class="logo" href="#">
+                <img src="../assets/img/dc-logo.png" alt="DC logo header">
+            </a>
+            <!-- menu -->
+            <nav>
+                <ul>
+                    <li v-for="(link, index) in links" :key="index">
+                        <a :class="{active: link.current}" :href="link.url">{{link.text}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
   </header>
 </template>
 
@@ -80,13 +82,18 @@ export default {
 <style lang="scss" scoped>
     @import '../assets/style/partials/variables.scss';
     header {
-        display: flex;
-        justify-content: space-between;
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
         .logo img {
             max-height: 80px;
         }
-        align-items: center;
-        padding: 10px 0;
         nav {
             ul {
                 display: flex;
