@@ -255,7 +255,7 @@ export default {
     footer {
         .footer-top {
             background: $brandColor;
-            padding: 50px 0;
+            padding: 50px 20px;
             ul {
                 display: flex;
                 justify-content: space-around;
@@ -286,6 +286,7 @@ export default {
         .footer-main {
             background-image: url('../assets/img/footer-bg.jpg');
             @include backgroundImage();
+            padding: 0 20px;
             .container {
                 padding: 40px 0;
                 background-image: url('../assets/img/dc-logo-bg.png');
@@ -318,7 +319,7 @@ export default {
         }
         .footer-bottom {
             background-color: rgb(48,48,48);
-            padding: 20px 0;
+            padding: 20px 20px;
             .container {
                 display: flex;
                 align-items: center;

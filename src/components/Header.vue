@@ -85,6 +85,7 @@ export default {
         background-color: #fff;
         position: fixed;
         width: 100%;
+        padding: 0 20px;
         .container {
             display: flex;
             justify-content: space-between;

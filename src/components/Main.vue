@@ -16,7 +16,7 @@ export default {
     @import '../assets/style/partials/variables.scss';
     main {
         background: $black;
-        padding: 140px 0 40px;
+        padding: 140px 20px 40px;
         h1 {
             color: $white;
         }
