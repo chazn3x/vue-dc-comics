@@ -52,7 +52,39 @@
         <!-- footer bottom -->
         <div class="footer-bottom">
             <div class="container">
-
+                <!-- sign up button -->
+                <a class="sign" href="#">sign-up now!</a>
+                <!-- socials -->
+                <div class="socials">
+                    <span>follow us</span>
+                    <div class="icons">
+                        <div class="icon">
+                            <a href="#">
+                                <img src="../assets/img/footer-facebook.png" alt="Facebook icon">
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <img src="../assets/img/footer-twitter.png" alt="Twitter icon">
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <img src="../assets/img/footer-youtube.png" alt="YouTube icon">
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <img src="../assets/img/footer-pinterest.png" alt="Pinterest icon">
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="#">
+                                <img src="../assets/img/footer-periscope.png" alt="Periscope icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -281,6 +313,49 @@ export default {
             .col:first-of-type {
                 h3:last-of-type {
                     margin-top: 20px;
+                }
+            }
+        }
+        .footer-bottom {
+            background-color: rgb(48,48,48);
+            padding: 20px 0;
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .sign {
+                border: 2px solid $brandColor;
+                padding: 10px;
+                text-transform: uppercase;
+                color: $white;
+                transition: .3s;
+                &:hover {
+                    background-color: $brandColor;
+                }
+            }
+            .socials {
+                display: flex;
+                align-items: center;
+                span {
+                    color: $brandColor;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    margin-right: 20px;
+                }
+                .icons {
+                    display: flex;
+                    .icon {
+                        margin: 0 7px;
+                        transition: .3s;
+                        img {
+                            height: 30px;
+                        }
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
                 }
             }
         }
