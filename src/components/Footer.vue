@@ -1,24 +1,59 @@
 <template>
     <footer>
+        <!-- footer top -->
         <div class="footer-top">
             <div class="container">
-                <nav>
-                    <ul>
-                        <li v-for="(link, index) in topLinks" :key="index">
-                            <a :href="link.url">
-                                <img :src="require('../assets/img/' + link.img)" :alt="link.text + ' icon'">
-                                {{link.text}}
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul>
+                    <li v-for="(link, index) in topLinks" :key="index">
+                        <a :href="link.url">
+                            <img :src="require('../assets/img/' + link.img)" :alt="link.text + ' icon'">
+                            <span>{{link.text}}</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="footer-main container">
-
+        <!-- footer middle -->
+        <div class="footer-main">
+            <div class="container">
+                <!-- links -->
+                <div class="col">
+                    <h3>{{mainCategories[0].title}}</h3>
+                    <ul>
+                        <li v-for="(link, index) in mainCategories[0].links" :key="index">
+                            <a :href="link.url">{{link.text}}</a>
+                        </li>
+                    </ul>
+                    <h3>{{mainCategories[1].title}}</h3>
+                    <ul>
+                        <li v-for="(link, index) in mainCategories[1].links" :key="index">
+                            <a :href="link.url">{{link.text}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>{{mainCategories[2].title}}</h3>
+                    <ul>
+                        <li v-for="(link, index) in mainCategories[2].links" :key="index">
+                            <a :href="link.url">{{link.text}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>{{mainCategories[3].title}}</h3>
+                    <ul>
+                        <li v-for="(link, index) in mainCategories[3].links" :key="index">
+                            <a :href="link.url">{{link.text}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom container">
+        <!-- footer bottom -->
+        <div class="footer-bottom">
+            <div class="container">
 
+            </div>
         </div>
     </footer>
 </template>
@@ -55,6 +90,128 @@ export default {
                     url: "#",
                 },
             ],
+            mainCategories: [
+                {
+                    title: "dc comics",
+                    links: [
+                        {
+                            text: "Characters",
+                            url: "#",
+                        },
+                        {
+                            text: "Comics",
+                            url: "#",
+                        },
+                        {
+                            text: "Movies",
+                            url: "#",
+                        },
+                        {
+                            text: "TV",
+                            url: "#",
+                        },
+                        {
+                            text: "Games",
+                            url: "#",
+                        },
+                        {
+                            text: "Videos",
+                            url: "#",
+                        },
+                        {
+                            text: "News",
+                            url: "#",
+                        },
+                    ],
+                },
+                {
+                    title: "shop",
+                    links: [
+                        {
+                            text: "Shop DC",
+                            url: "#",
+                        },
+                        {
+                            text: "Shop DC Collectibles",
+                            url: "#",
+                        },
+                    ],
+                },
+                {
+                    title: "dc",
+                    links: [
+                        {
+                            text: "Terms Of Use",
+                            url: "#",
+                        },
+                        {
+                            text: "Privacy policy (New)",
+                            url: "#",
+                        },
+                        {
+                            text: "Ad Choices",
+                            url: "#",
+                        },
+                        {
+                            text: "Advertising",
+                            url: "#",
+                        },
+                        {
+                            text: "Jobs",
+                            url: "#",
+                        },
+                        {
+                            text: "Subscriptions",
+                            url: "#",
+                        },
+                        {
+                            text: "Talent Workshops",
+                            url: "#",
+                        },
+                        {
+                            text: "CPSC Certificates",
+                            url: "#",
+                        },
+                        {
+                            text: "Ratings",
+                            url: "#",
+                        },
+                        {
+                            text: "Shop Help",
+                            url: "#",
+                        },
+                        {
+                            text: "Contact Us",
+                            url: "#",
+                        },
+                    ],
+                },
+                {
+                    title: "sites",
+                    links: [
+                        {
+                            text: "DC",
+                            url: "#",
+                        },
+                        {
+                            text: "MAD Magazine",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Kids",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Universe",
+                            url: "#",
+                        },
+                        {
+                            text: "DC Power Visa",
+                            url: "#",
+                        },
+                    ],
+                },
+            ],
         }
     }
 }
@@ -62,6 +219,7 @@ export default {
 
 <style lang="scss" scoped>
     @import '../assets/style/partials/variables.scss';
+    @import '../assets/style/mixin/mixins.scss';
     footer {
         .footer-top {
             background: $brandColor;
@@ -72,7 +230,6 @@ export default {
                 align-items: center;
                 li {
                     a {
-                        color: $white;
                         text-decoration: none;
                         text-transform: uppercase;
                         font-family: Arial, Helvetica, sans-serif;
@@ -80,6 +237,9 @@ export default {
                         font-size: .8rem;
                         display: flex;
                         align-items: center;
+                        span {
+                            color: $white;
+                        }
                         img {
                             height: 50px;
                             margin: 0 15px;
@@ -88,6 +248,39 @@ export default {
                     &:last-child a img {
                         height: 40px;
                     }
+                }
+            }
+        }
+        .footer-main {
+            background-image: url('../assets/img/footer-bg.jpg');
+            @include backgroundImage();
+            .container {
+                padding: 40px 0;
+                background-image: url('../assets/img/dc-logo-bg.png');
+                background-repeat: no-repeat;
+                background-position-y: center;
+                background-position-x: right;
+                display: flex;
+            }
+            .col {
+                margin-right: 25px;
+                h3 {
+                    color: $white;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+                li a {
+                    color: rgba(255,255,255,0.5);
+                    font-size: .7rem;
+                    font-family: Arial, Helvetica, sans-serif;
+                    &:hover {
+                        color: $brandColor;
+                    }
+                }
+            }
+            .col:first-of-type {
+                h3:last-of-type {
+                    margin-top: 20px;
                 }
             }
         }

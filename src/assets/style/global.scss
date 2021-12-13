@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: $black;
 }
 
 /*----------------
@@ -30,4 +31,11 @@ body {
 .container {
     margin: 0 auto;
     max-width: 1250px;
+}
+
+/*----------------
+    TYPO
+----------------*/
+a {
+    text-decoration: none;
 }

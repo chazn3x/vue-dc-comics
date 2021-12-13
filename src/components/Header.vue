@@ -1,9 +1,9 @@
 <template>
   <header class="container">
         <!-- logo -->
-        <div class="logo">
+        <a class="logo" href="#">
             <img src="../assets/img/dc-logo.png" alt="DC logo header">
-        </div>
+        </a>
         <!-- menu -->
         <nav>
             <ul>
@@ -92,7 +92,6 @@ export default {
                 display: flex;
                 li a {
                     padding: 40px 15px;
-                    color: $black;
                     text-decoration: none;
                     text-transform: uppercase;
                     font-weight: 500;
