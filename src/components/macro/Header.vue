@@ -3,13 +3,13 @@
         <div class="container">
             <!-- logo -->
             <a class="logo" href="#">
-                <img src="../assets/img/dc-logo.png" alt="DC logo header">
+                <img src="../../assets/img/dc-logo.png" alt="DC logo header">
             </a>
             <!-- menu -->
             <nav>
                 <ul>
                     <li v-for="(link, index) in links" :key="index">
-                        <a :class="{active: link.current}" :href="link.url">{{link.text}}</a>
+                        <a :class="{active: link.current}" :href="link.url" @click.prevent="changePage(index)">{{link.text}}</a>
                     </li>
                 </ul>
             </nav>
@@ -75,17 +75,24 @@ export default {
                 },
             ],
         }
+    },
+    methods: {
+        changePage(index) {
+            this.links.forEach(link => link.current = false);
+            this.links[index].current = true;
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/style/partials/variables.scss';
+    @import '../../assets/style/partials/variables.scss';
     header {
         background-color: #fff;
         position: fixed;
         width: 100%;
         padding: 0 20px;
+        z-index: 1;
         .container {
             display: flex;
             justify-content: space-between;

@@ -6,7 +6,7 @@
                 <ul>
                     <li v-for="(link, index) in topLinks" :key="index">
                         <a :href="link.url">
-                            <img :src="require('../assets/img/' + link.img)" :alt="link.text + ' icon'">
+                            <img :src="require('../../assets/img/' + link.img)" :alt="link.text + ' icon'">
                             <span>{{link.text}}</span>
                         </a>
                     </li>
@@ -60,27 +60,27 @@
                     <div class="icons">
                         <div class="icon">
                             <a href="#">
-                                <img src="../assets/img/footer-facebook.png" alt="Facebook icon">
+                                <img src="../../assets/img/footer-facebook.png" alt="Facebook icon">
                             </a>
                         </div>
                         <div class="icon">
                             <a href="#">
-                                <img src="../assets/img/footer-twitter.png" alt="Twitter icon">
+                                <img src="../../assets/img/footer-twitter.png" alt="Twitter icon">
                             </a>
                         </div>
                         <div class="icon">
                             <a href="#">
-                                <img src="../assets/img/footer-youtube.png" alt="YouTube icon">
+                                <img src="../../assets/img/footer-youtube.png" alt="YouTube icon">
                             </a>
                         </div>
                         <div class="icon">
                             <a href="#">
-                                <img src="../assets/img/footer-pinterest.png" alt="Pinterest icon">
+                                <img src="../../assets/img/footer-pinterest.png" alt="Pinterest icon">
                             </a>
                         </div>
                         <div class="icon">
                             <a href="#">
-                                <img src="../assets/img/footer-periscope.png" alt="Periscope icon">
+                                <img src="../../assets/img/footer-periscope.png" alt="Periscope icon">
                             </a>
                         </div>
                     </div>
@@ -250,8 +250,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/style/partials/variables.scss';
-    @import '../assets/style/mixin/mixins.scss';
+    @import '../../assets/style/partials/variables.scss';
+    @import '../../assets/style/mixin/mixins.scss';
     footer {
         .footer-top {
             background: $brandColor;
@@ -284,12 +284,12 @@ export default {
             }
         }
         .footer-main {
-            background-image: url('../assets/img/footer-bg.jpg');
+            background-image: url('../../assets/img/footer-bg.jpg');
             @include backgroundImage();
             padding: 0 20px;
             .container {
                 padding: 40px 0;
-                background-image: url('../assets/img/dc-logo-bg.png');
+                background-image: url('../../assets/img/dc-logo-bg.png');
                 background-repeat: no-repeat;
                 background-position-y: center;
                 background-position-x: right;
